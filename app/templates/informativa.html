@@ -1,0 +1,35 @@
+{% extends "unlogged_base.html" %}
+
+{% block content %}
+
+<div class="grid-container">
+
+    <p>Questa pagina conterrà:</p>
+    <ul>
+        <li>breve descrizione degli obiettivi dello strumento</li>
+        <li>istruzioni per compilazione (anche sulla base dei vostri feedback)</li>
+        <li>informativa sul trattamento dei dati personali</li>
+    </ul>
+
+    <br/>
+    <br/>
+
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-2"></div>
+            <div class="cell medium-4">
+                <!-- a type="button" name="btnAccept" class="success button">Accept</a -->
+                {{form.accept(class="button")}}
+            </div>
+            <div class="cell medium-4">
+                <!-- a type="button" name="btnReject" class="alert button">Reject</a -->
+                {{form.reject(class="button")}}
+            </div>
+            <div class="cell medium-2"></div>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

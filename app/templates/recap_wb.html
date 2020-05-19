@@ -1,0 +1,325 @@
+{% extends "logged_base.html" %}
+
+{% block content %}
+
+    <fieldset class="fieldset">
+        <legend>Whistleblower</legend>
+
+        <fieldset class="fieldset">
+            <legend>Legislative attention on the WB issue and the relevance of the existing normative and institutional framework</legend>
+            <br/>
+            <p><b>score:</b> {{ values.d6_1 + values.d6_2 + values.d6_3 + values.d6_4 }}</p>
+            {% if (values.d6_1 + values.d6_2) == 10 %}
+                <p><b>strong area:</b></p>
+                <ul>
+                    {% if values.d6_1 == 10 %}
+                        <li style="color:green">Dedicated law on WB protection (WB protection is the solely purpose of the legislation)</li>
+                    {% endif %}
+                    {% if values.d6_2 == 10 %}
+                        <li style="color:green">Complete WB protection through comprehensive laws or provisions in sectoral laws (i.e. Anticorruption)</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d6_1 + values.d6_2 + values.d6_3 + values.d6_4) <= 3 %}
+                <p><b>weak area:</b></p>
+                <ul>
+                    {% if values.d6_1 == 0 %}
+                        <li style="color:red">Dedicated law on WB protection (WB protection is the solely purpose of the legislation)</li>
+                    {% endif %}
+                    {% if values.d6_2 == 0 %}
+                        <li style="color:red">Complete WB protection through comprehensive laws or provisions in sectoral laws (i.e. Anticorruption)</li>
+                    {% endif %}
+                    {% if values.d6_3 == 3 %}
+                        <li style="color:darkorange">WB protection is scattered across different laws or provisions in sectoral laws (i.e. Anticorruption)</li>
+                    {% else %}
+                         <li style="color:red">WB protection is scattered across different laws or provisions in sectoral laws (i.e. Anticorruption)</li>
+                    {% endif %}
+                    {% if values.d6_4 == 3 %}
+                        <li style="color:darkorange">General WB standard protection though provisions in labour, civil service employment laws</li>
+                    {% else %}
+                        <li style="color:red">General WB standard protection though provisions in labour, civil service employment laws</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>Political will to ensure adequate coverage</legend>
+            <br/>
+            <p><b>score</b>: {{ values.d7 + values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4 + values.d9 }}</p>
+            {% if (values.d7 + values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4 + values.d9) >= 2 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    {% if values.d7 == 4 %}
+                        <li style="color:green">Sector of application</li>
+                    {% endif %}
+                    {% if (values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4) > 3 %}
+                        <li style="color:green">Personal Scope</li>
+                    {% endif %}
+                    {% if values.d9 == 2 %}
+                        <li style="color:green">Material scope (object of the WB report)</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d7 + values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4 + values.d9) < 13 %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    {% if values.d7 == 2 %}
+                        <li style="color:darkorange">Sector of application</li>
+                    {% endif %}
+                    {% if (values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4) == 0 %}
+                        <li style="color:red">Personal Scope</li>
+                    {% elif (values.d8_1 + values.d8_2 + values.d8_3 + values.d8_4) <= 3 %}
+                        <li style="color:darkorange">Personal Scope
+                        <ul>
+                            {% if values.d8_1 == 0 %}
+                                <li style="color:red">Only employees</li>
+                            {% endif %}
+                            {% if values.d8_2 == 0 %}
+                                <li style="color:red">Contractors, subcontractors, suppliers, business partners</li>
+                            {% endif %}
+                            {% if values.d8_3 == 0 %}
+                                <li style="color:red">Consultants, other self-employed person providing services,</li>
+                            {% endif %}
+                            {% if values.d8_4 == 0 %}
+                                <li style="color:red">Volunteers, trainees</li>
+                            {% endif %}
+                        </ul></li>
+                    {% endif %}
+                    {% if values.d9 == 1 %}
+                        <li style="color:darkorange">Material scope (object of the WB report)</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>Appropriateness of reporting channels</legend>
+            <br/>
+            <p><b>score</b>: {{ values.d10_1 + values.d10_2 + values.d10_3 + values.d11 }}</p>
+            {% if (values.d10_1 + values.d10_2 + values.d10_3 + values.d11) > 3 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    {% if (values.d10_1 + values.d10_2 + values.d10_3) > 3 %}
+                        <li style="color:green">Type of channels for reporting</li>
+                    {% endif %}
+                    {% if values.d11 == 6 %}
+                        <li style="color:green">Reporting process/mechanism in force</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d10_1 + values.d10_2 + values.d10_3 + values.d11) < 15 %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    {% if (values.d10_1 + values.d10_2 + values.d10_3) == 0 %}
+                        <li style="color:red">Type of channels for reporting</li>
+                    {% elif (values.d10_1 + values.d10_2 + values.d10_3) <= 3 %}
+                        <li style="color:darkorange">Type of channels for reporting
+                        <ul>
+                            {% if values.d10_1 == 0 %}
+                                <li style="color:red">internal reporting system</li>
+                            {% endif %}
+                            {% if values.d10_2 == 0 %}
+                                <li style="color:red">external disclosure to designated body/competent body</li>
+                            {% endif %}
+                            {% if values.d10_3 == 0 %}
+                                <li style="color:red">external disclosure to the public/to the media</li>
+                            {% endif %}
+                        </ul></li>
+                    {% endif %}
+                    {% if values.d11 == 3 %}
+                        <li style="color:darkorange">Reporting process/mechanism in force</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>Level of protection and guarantees to WB</legend>
+            <br/>
+            <p><b>score</b>: {{ values.d12 + values.d13 + values.d14 }}</p>
+            {% if (values.d12 + values.d13 + values.d14) > 3 %}
+            <p><b>strong areas:</b></p>
+                <ul>
+                    {% if values.d12 == 10 %}
+                        <li style="color:green">guarantee of the confidentiality and protection of the identity of the WB</li>
+                    {% endif %}
+                    {% if values.d13 == 8 %}
+                        <li style="color:green">
+                            protection from retaliation, any kind of penalisation,
+                            discrimination, suspension, demotion, reprisal, dismissal harassment,
+                            unfair treatment, mobbing at work
+                        </li>
+                    {% endif %}
+                    {% if values.d14 == 4 %}
+                        <li style="color:green">immunity or protection from civil, administrative and criminal liability, libel and defamation suits</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d12 + values.d13 + values.d14) < 22 %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    {% if values.d12 == 3 %}
+                        <li style="color:darkorange">guarantee of the confidentiality and protection of the identity of the WB</li>
+                    {% elif values.d12 == 0 %}
+                         <li style="color:red">guarantee of the confidentiality and protection of the identity of the WB</li>
+                    {% endif %}
+                    {% if values.d13 == 0 %}
+                        <li style="color:red">
+                            protection from retaliation, any kind of penalisation,
+                            discrimination, suspension, demotion, reprisal, dismissal harassment,
+                            unfair treatment, mobbing at work
+                        </li>
+                    {% endif %}
+                    {% if values.d14 == 0 %}
+                        <li style="color:red">immunity or protection from civil, administrative and criminal liability, libel and defamation suits</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Capacity of the legislator to provide procedures, mechanisms and measures of enforcement to be compliant and appropriate to the needs of the WB user
+            </legend>
+            <br/>
+            <p><b>score</b>: {{ values.d15 + values.d16 + values.d17 }}</p>
+            {% if (values.d15 + values.d16 + values.d17) > 2 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    {% if values.d15 == 5 %}
+                        <li style="color:green">
+                            Procedures/Guidelines for collecting, managing and monitoring WB reports provided
+                            by the competent national or federal institution/agency/body
+                        </li>
+                    {% endif %}
+                    {% if values.d16 == 5 %}
+                        <li style="color:green">
+                            Mechanisms to provide information, advice, feedback, follow up to the WB on action
+                            being taken in response to his disclosures/alerts (i.e IT platform)
+                        </li>
+                    {% endif %}
+                    {% if values.d17 == 5 %}
+                        <li style="color:green">
+                            Sanctions measures for not compliance
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d15 + values.d16 + values.d17) < 15 %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    {% if values.d15 == 2 %}
+                        <li style="color:darkorange">
+                            Procedures/Guidelines for collecting, managing and monitoring WB reports provided
+                            by the competent national or federal institution/agency/body
+                        </li>
+                    {% else %}
+                        <li style="color:red">
+                            Procedures/Guidelines for collecting, managing and monitoring WB reports provided
+                            by the competent national or federal institution/agency/body
+                        </li>
+                    {% endif %}
+                    {% if values.d16 == 0 %}
+                        <li style="color:red">
+                            Mechanisms to provide information, advice, feedback, follow up to the WB on action
+                            being taken in response to his disclosures/alerts (i.e IT platform)
+                        </li>
+                    {% endif %}
+                    {% if values.d17 == 0 %}
+                        <li style="color:red">
+                            Sanctions measures for not compliance
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>Allocation of roles and responsabilities among actors in managing the WB</legend>
+            <br/>
+            <p><b>score</b>: {{ values.d18 + values.d19 }}</p>
+            {% if (values.d18 + values.d19) >= 5 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    {% if values.d18 > 0 %}
+                        <li style="color:green">Indepentent body with oversight and enforcement duties on WB</li>
+                    {% endif %}
+                    {% if values.d19 > 0 %}
+                        <li style="color:green">Person/department dedicated to WB within the organization (at decentalised level)</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+            {% if (values.d18 + values.d19) < 15 %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    {% if values.d18 == 0 %}
+                        <li style="color:red">Indepentent body with oversight and enforcement duties on WB</li>
+                    {% endif %}
+                    {% if values.d19 == 0 %}
+                        <li style="color:red">Person/department dedicated to WB within the organization (at decentalised level)</li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </fieldset>
+
+        <br/><br/>
+
+
+        <fieldset class="fieldset">
+            <legend>Availability of specific economic resources for the implementation of the WB system</legend>
+            <br/>
+            <p><b>score</b>: {{ values.d20 }}</p>
+            {% if values.d20 > 0 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    <li style="color:green">Dedicated resources available (nationally and/or locally)</li>
+                </ul>
+            {% else %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    <li style="color:red">Dedicated resources available (nationally and/or locally)</li>
+                </ul>
+            {% endif %}
+        </fieldset>
+
+
+        <br><br>
+
+        <fieldset class="fieldset">
+            <legend>Legislation verifies the application and results of the WB system </legend>
+            <br/>
+            <p><b>score</b>: {{ values.d21 }}</p>
+            {% if values.d21 > 0 %}
+                <p><b>strong areas:</b></p>
+                <ul>
+                    <li style="color:green">
+                        Obbligation to provide periodic data on the WB alerts and
+                        results to national/federal competent authority/commission
+                    </li>
+                </ul>
+            {% else %}
+                <p><b>weak areas:</b></p>
+                <ul>
+                    <li style="color:red">
+                        Obbligation to provide periodic data on the WB alerts and
+                        results to national/federal competent authority/commission
+                    </li>
+                </ul>
+            {% endif %}
+        </fieldset>
+
+    </fieldset>
+
+{% endblock %}
+

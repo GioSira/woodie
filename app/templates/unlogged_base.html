@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href={{url_for("static", filename="foundation-icons/foundation-icons.css")}} />
+    <link rel="stylesheet" href={{url_for("static", filename='foundation/css/foundation.css')}} />
+    <link rel="stylesheet" href={{url_for("static", filename='foundation/css/app.css')}} />
+    <link rel="stylesheet" href={{url_for("static", filename="password.css")}} />
+    <link rel="stylesheet" href={{url_for("static", filename="base.css")}} />
+</head>
+<body>
+
+<div class="grid-container fluid">
+
+    <div class="grid-x align-center">
+        <div class="cell large-1"></div>
+        <div class="cell large-10">
+
+            <div class="grid-x align-center">
+                <div class="cell large-12">
+                    <img src={{url_for("static", filename="WOODIE_large.jpg")}} id="woodie"/>
+                </div>
+            </div>
+
+            <div class="top-bar" id="navbar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-x align-center">
+
+                <div class="cell medium-1" id="nav"></div>
+
+                <div class="cell medium-10" id="content">
+                    <section class="content">
+                        {% block content %}{% endblock %}
+                    </section>
+                </div>
+
+                <div class="cell medium-1" id="nav"></div>
+
+            </div>
+
+            <div class="grid-x grid-padding-x">
+                <div class="cell large-12" id="bottom">
+                    <p>
+                        <img src={{url_for("static", filename="eu_flag.png")}} id="flag" />
+                        The project is founded by the European Union Commission Dg
+                        Migration and Home Affairs Internal security Fund Police.
+                    </p>
+                    <br/>
+                    <p> Copyright © 2020, Woodie Project. </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="cell large-1"></div>
+    </div>
+
+</div>
+
+<script src={{ url_for("static", filename="foundation/js/vendor/jquery.js") }}></script>
+<script src={{ url_for("static", filename="foundation/js/vendor/foundation.js") }}></script>
+<script src={{ url_for("static", filename="foundation/js/vendor/what-input.js") }}></script>
+<script src={{ url_for("static", filename="foundation/js/app.js") }}></script>
+<script src={{ url_for("static", filename="password.js") }}></script>
+<script src={{ url_for("static", filename="fieldsH.js") }}></script>
+
+
+</body>
+</html>

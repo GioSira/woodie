@@ -1,0 +1,63 @@
+{% extends "unlogged_base.html" %}
+
+{% block content %}
+<div class="grid-container">
+
+    <form class="log-in-form" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-2"></div>
+            <div class="cell medium-8">
+                <div class="sign-in-form">
+
+                    <h4 class="text-center">Log In</h4>
+
+                    <div class="input-group">
+                        <span class="input-group-label">{{form.username.label.text}}</span>
+                        {{form.username(placeholder='John Smith', class='username input-group-field', id='username')}}
+                        {% if form.username.errors %}
+                            {% for error in form.username.errors %}
+                                <span class="label alert">{{ error }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="password-wrapper">
+                        <div class="input-group">
+                            <span class="input-group-label">{{form.password.label.text}}</span>
+                            {{form.password(placeholder='inserisci password', id='password', class='password input-group-field')}}
+                            <!-- input type="password" value="" placeholder="Enter Password" id="password" class="password" -->
+                            <button class="unmask" type="button" title="Mask/Unmask password to check content">
+                                Unmask
+                            </button>
+                            {% if form.password.errors %}
+                                {% for error in form.password.errors %}
+                                    <span class="label alert">{{ error }}</span>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="grid-x grid-padding-x">
+                        <div class="cell small-2"></div>
+                        <div class="cell small-8">
+                            {% for message in get_flashed_messages() %}
+                            <div class="alert alert-warning">
+                                <span class="label alert" style="margin-left: 25px;"> {{ message }} </span>
+                                <br/><br/>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="cell small-2"></div>
+                    </div>
+
+                    <button type="submit" value="submit" id="submit" class="button expanded">Log In</button>
+                    <!-- p class="text-center"><a href="#">Forgot your password?</a></p -->
+                </div>
+            </div>
+            <div class="cell medium-2"></div>
+        </div>
+
+    </form>
+
+</div>
+{% endblock %}

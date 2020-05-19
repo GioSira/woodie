@@ -1,0 +1,348 @@
+{% extends "unlogged_base.html" %}
+
+{% block content %}
+
+
+<form class="indicators-form" method="POST" data-abide novalidate>
+    {{ form.hidden_tag() }}
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    <br/><br/>
+    {% endfor %}
+
+    <fieldset class="fieldset">
+        <legend>Open Data</legend>
+
+        <br/>
+
+        <fieldset class="fieldset">
+            <legend>From the list below select the features present in the Open Data policy framework of
+                your country. You can select multiple options.
+            </legend>
+            {{ form.d1 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the policy framework in place in your country provide public administrations with
+                standardized procedures and/or guidelines concerning the disclosure of public data
+                (i.e concerning formats, data set, IT requirements etc)?
+            </legend>
+            {{ form.d2_1 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the policy framework in your country establish requirements regarding
+                the accessibility of public information?
+            </legend>
+            {{ form.d2_2 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                In your country is there an obligation for public administrations to publish data on
+                institutional websites and/or on national data portals?
+            </legend>
+            {{ form.d2_3 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does an obligation to publish data in the field of public procurement with standardized
+                requirements exist in your country?
+            </legend>
+            {{ form.d2_4 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <div id="d2_hidden">
+
+            <fieldset class="fieldset">
+                <legend>
+                    Could you please indicate the steps of the public procurement process where the
+                    obligation to publish applies? You can select multiple options.
+                </legend>
+                {{ form.d2_5 }}
+            </fieldset>
+
+            <br/><br/>
+
+        </div>
+
+        <fieldset class="fieldset">
+            <legend>
+                In your country, does a mandatory nation-wide platform for public procurement exist?
+            </legend>
+            {{ form.d2_6 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                According to the legislation in your country, are public administrations oblige to
+                respond to requests of data by a certain period of time?
+            </legend>
+            {{ form.d2_7 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the policy framework set out sanctions for those public administrations that do
+                not comply with the obbligations on OD?
+            </legend>
+            {{ form.d2_8 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Regarding the actors and responsibilities involved, in your country does a supervisory body
+                in charge of supporting the implementation of OD exist (at national or federal level
+                depending on your constitutional system)?
+            </legend>
+            {{ form.d3_1 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>Does the legislation in your country require to appoint a responsible
+                in charge of carrying out the activities on OD within each public
+                administration (single person or department)?
+            </legend>
+            {{ form.d3_2 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation provide specific economic resources for implementing the Open Data policy?
+            </legend>
+            {{ form.d4 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the policy in place in your country contain obligations to provide periodic data on
+                the progresses made on OD implementation to the national or federal competent body?
+            </legend>
+            {{ form.d5 }}
+        </fieldset>
+
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>Whisteblower</legend>
+
+        <br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Select the option that best describes the type of legal framework on WB existing in your country:
+            </legend>
+            {{ form.d6 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <div id="d7_hidden">
+
+            <fieldset class="fieldset">
+                <legend>
+                    Does the legal framework also contain standard protection though provisions in labour, civil service
+                    employment laws?
+                </legend>
+                {{ form.d7 }}
+            </fieldset>
+
+            <br/><br/>
+
+        </div>
+
+
+        <fieldset class="fieldset">
+            <legend>To which sector/s does the WB protection in your country apply to?</legend>
+            {{ form.d8 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Among the following categories of persons, which are those covered by the WB legislation
+                in your country (personal scope)? You can select multiple options.
+            </legend>
+            {{ form.d9 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Which kinds of act can be reported according to the WB legislation in
+                your country (material scope)?
+            </legend>
+            {{ form.d10 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the WB legislation in your country establish channels for reporting?
+            </legend>
+            {{ form.d11 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <div id="d12_hidden">
+
+            <fieldset class="fieldset">
+                <legend>Select the type of channels for reporting that exist in your country.
+                    You can select multiple options.
+                </legend>
+                {{ form.d12 }}
+            </fieldset>
+
+            <br/><br/>
+
+        </div>
+
+        <fieldset class="fieldset">
+            <legend>Which type of reporting procedure exists in your country?</legend>
+            {{ form.d13 }}
+        </fieldset>
+
+        <br><br>
+
+        <fieldset class="fieldset">
+            <legend>Does the legislation in your country provide the guarantee of confidentiality
+                and the protection of the identity of the WB?
+            </legend>
+            {{ form.d14 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation in your country protect the WB against retaliation,
+                penalisation, discrimination, suspension, demotion, reprisal, dismissal harassment,
+                unfair treatment, mobbing at work?
+            </legend>
+            {{ form.d15 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation in your country provide immunity from civil, administrative
+                and criminal liability, libel and defamation suits?
+            </legend>
+            {{ form.d16 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                In your country are there procedures and/or guidelines for collecting,
+                managing and monitoring WB reports provided by the competent national or federal body?
+            </legend>
+            {{ form.d17 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does your WB legislation establish mechanisms to provide information, advice,
+                feedback, follow up to the WB on the actions taken in response to its report (i.e IT platform)?
+            </legend>
+            {{ form.d18 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the policy framework set out sanctions for those that do not comply with the obligations on WB?
+            </legend>
+            {{ form.d19 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation in your country establish an independent administrative body
+                with oversight and enforcement competencies on the protection of WB?
+            </legend>
+            {{ form.d20 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation in your country require public administration to appoint a person
+                responsible for overseeing the implementation of the WB system within the organization?
+            </legend>
+            {{ form.d21 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Does the legislation in your country allocate specific economic resources
+                to support the implementation of the WB protection?
+            </legend>
+            {{ form.d22 }}
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                In your country are public administrations required to provide periodically
+                data on the WB alerts collected to the national/federal competent body?
+            </legend>
+            {{ form.d23 }}
+        </fieldset>
+
+    </fieldset>
+
+    <br/><br/>
+
+    <button type="submit" value="submit" id="submit" class="button">Submit</button>
+
+</form>
+
+{% endblock %}
+

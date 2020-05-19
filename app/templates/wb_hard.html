@@ -1,0 +1,201 @@
+{% extends "unlogged_base.html" %}
+
+{% block content %}
+
+
+<form class="indicators-form" method="POST" data-abide novalidate>
+    {{ form.hidden_tag() }}
+
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    <br/><br/>
+    {% endfor %}
+
+
+    <fieldset class="fieldset">
+        <legend>
+            Selezioni l’opzione che meglio descrive il quadro giuridico vigente sul whistleblowing in Italia:
+        </legend>
+        {{ form.d6 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d7_hidden">
+
+        <fieldset class="fieldset">
+            <legend>
+                Questa domanda è solo per i paesi in cui la protezione dei whistleblower è sparsa in più leggi o
+                disposizioni in leggi settoriali: esiste anche una protezione generale standard attraverso
+                disposizioni nel diritto del lavoro o del pubblico impiego?
+            </legend>
+            {{ form.d7 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+
+    <fieldset class="fieldset">
+        <legend>In quali settori si applica la protezione dei whistleblower in Italia?</legend>
+        {{ form.d8 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Tra le seguenti categorie di lavoratori, a quali si applica la legislazione sui WB in Italia
+            (ambito di applicazione soggettivo)? È possibile selezionare più opzioni.
+        </legend>
+        {{ form.d9 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Quali tipi di violazioni possono essere segnalate secondo la legge
+            sul WB in Italia (ambito di applicazione oggettivo)?
+        </legend>
+        {{ form.d10 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione sul whistleblowing in Italia stabilisce canali per la segnalazione?
+        </legend>
+        {{ form.d11 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d12_hidden">
+
+        <fieldset class="fieldset">
+            <legend>Selezioni il tipo di canali di segnalazione esistenti nel suo paese. È possibile selezionare più opzioni.
+            </legend>
+            {{ form.d12 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>Quale tipo di procedura per la segnalazione esiste in Italia?</legend>
+        {{ form.d13 }}
+    </fieldset>
+
+    <br><br>
+
+    <fieldset class="fieldset">
+        <legend>La legislazione in Italia prevede la garanzia della confidenzialità
+            e la protezione dell’identità del WB?
+        </legend>
+        {{ form.d14 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione in Italia protegge il WB dalla ritorsione, discriminazione, sospensione,
+            retrocessione di grado, rappresaglia, licenziamento, molestie,
+            trattamento iniquo, o mobbing sul posto di lavoro?
+        </legend>
+        {{ form.d15 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione in Italia prevede limitazioni di responsabilità civile, amministrativa e penale?
+        </legend>
+        {{ form.d16 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            In Italia esistono procedure e/o linee guida fornite dalla competente autorità nazionale
+            o federale per raccogliere, gestire e monitorare le segnalazioni dei WB?
+        </legend>
+        {{ form.d17 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione sul WB in Italia stabilisce meccanismi per fornire informazioni, consigli e feedback
+            al whistleblower sul seguito dato alla sua segnalazione? (es. una piattaforma IT)?
+        </legend>
+        {{ form.d18 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Il quadro legislativo prevede sanzioni per chi non adempie gli obblighi sul whistleblowing?
+        </legend>
+        {{ form.d19 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione in Italia istituisce un’autorità amministrativa indipendente
+            con compiti di controllo sulla protezione dei whistleblower?
+        </legend>
+        {{ form.d20 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione in Italia richiede alle pubbliche amministrazioni di individuare
+            all’interno dell’organizzazione una persona responsabile
+            per il controllo dell’implementazione sul sistema del whistleblowing?
+        </legend>
+        {{ form.d21 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La legislazione in Italia prevede specifiche risorse economiche per supportare
+            l’implementazione della protezione dei whistleblower?
+        </legend>
+        {{ form.d22 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            In Italia le pubbliche amministrazioni devono fornire alla competente autorità nazionale
+            o federale dati periodici sulle segnalazioni ricevute dai whistleblower?
+        </legend>
+        {{ form.d23 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <button type="submit" value="submit" id="submit" class="button">Invia</button>
+
+</form>
+
+{% endblock %}

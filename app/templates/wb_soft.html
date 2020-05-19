@@ -1,0 +1,377 @@
+{% extends "logged_base.html" %}
+
+{% block content %}
+
+<form class="indicators-form" method="POST" data-abide novalidate>
+
+    {{form.hidden_tag()}}
+
+    <fieldset class="fieldset">
+        <legend>
+            E’ previsto nell’amministrazione un canale di segnalazione interno per i whistleblower?
+        </legend>
+        {{ form.d1 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Quali canali di segnalazione ulteriori rispetto a quelli previsti dalla legge sono
+            disponibili nella sua amministrazione? È possibile selezionare più opzioni.
+        </legend>
+        {{ form.d2 }}
+        <div id="d2_hidden_soft">
+
+            <br/>
+
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-2">
+                    <label class="text-right middle">Specificare</label>
+                </div>
+                <div class="cell medium-8">
+
+                    {{ form.d2_1 }}
+                </div>
+                <div class="cell medium-2"></div>
+            </div>
+
+        </div>
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Esiste un regolamento interno che indichi in modo chiaro come effettuare una segnalazione?
+        </legend>
+        {{ form.d3 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d3_hidden">
+        <fieldset class="fieldset">
+            <legend>
+                Il regolamento interno è accessibile da tutti i potenziali utenti?
+            </legend>
+            {{ form.d3_1 }}
+        </fieldset>
+
+        <br/><br/>
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione ha inviato specifiche comunicazioni per informare tutti i potenziali utenti
+            dell’esistenza dei canali di segnalazione? È possibile selezionare più risposte.
+        </legend>
+        {{ form.d4 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d5_hidden">
+        <fieldset class="fieldset">
+            <legend>
+                All’interno dell’amministrazione esiste una persona o un
+                ufficio incaricato di gestire le segnalazioni dei whistleblower?
+            </legend>
+            {{ form.d5_1 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+            Negli ultimi sei mesi l’amministrazione ha ricevuto segnalazioni da parte di whistleblower?
+        </legend>
+        {{ form.d6 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d6_hidden">
+
+        <fieldset class="fieldset">
+            <legend>
+                Quante segnalazioni avete ricevuto negli ultimi sei mesi?
+            </legend>
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-2"></div>
+                <div class="cell medium-8">
+                    {{ form.d6_1 }}
+                </div>
+                <div class="cell medium-2"></div>
+            </div>
+        </fieldset>
+
+        <br/><br/>
+
+        <fieldset class="fieldset">
+            <legend>
+                Rispetto ai sei mesi precedenti al periodo considerato nella precedente domanda, il numero di segnalazioni ricevute è
+            </legend>
+            {{ form.d6_2 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+             Prendendo in considerazione tutte le segnalazioni ricevute, come le valuta in base ai criteri di seguito elencati?
+        </legend>
+        <p> completezza delle informazioni fornite {{ form.d6_3_1(id="radio-inline") }} </p>
+        <p> rilevanza/pertinenza {{ form.d6_3_2(id="radio-inline") }} </p>
+        <p> conformità ai requisiti previsti dalla legge {{ form.d6_3_3(id="radio-inline") }} </p>
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Prendendo in considerazione tutte le segnalazioni ricevute, come sono distribuite
+            in percentuale tra i canali di segnalazione disponibili?
+        </legend>
+        <p> mail dedicata {{ form.d6_4_1(id="radio-inline") }} </p>
+        <p> piattaforma dedicata {{ form.d6_4_2(id="radio-inline") }} </p>
+        <p> segnalazione scritta {{ form.d6_4_3(id="radio-inline") }} </p>
+        <p> segnalazione di persona{{ form.d6_4_3(id="radio-inline") }} </p>
+        <br/>
+
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-2">
+                <label class="text-right middle">Altro: </label>
+            </div>
+            <div class="cell medium-8">
+                {{ form.d6_4_5 }}
+            </div>
+        </div>
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Quante segnalazioni sono state effettuate tramite i canali di segnalazione esterna (Anac)?
+        </legend>
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-2"></div>
+            <div class="cell medium-8">
+                {{ form.d6_5 }}
+            </div>
+            <div class="cell medium-2"></div>
+        </div>
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            I whistleblower sono informati sullo stato di avanzamento della loro segnalazione?
+        </legend>
+        {{ form.d7 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d7_hidden_soft">
+
+        <fieldset class="fieldset">
+            <legend>
+                In quale momento il whistleblower è informato?
+            </legend>
+            {{ form.d8 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+    <div id="d8_hidden">
+
+    <fieldset class="fieldset">
+        <legend>
+            In quale momento specifico del procedimento il WB viene informato?
+        </legend>
+        {{ form.d8_1 }}
+    </fieldset>
+
+    <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+            È assicurata la protezione dell’identità del segnalante?
+        </legend>
+        {{ form.d9 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione ha mai adottato misure o cambiamenti a seguito di questioni sollevate nelle segnalazioni?
+        </legend>
+        {{ form.d10 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d10_hidden">
+
+        <fieldset class="fieldset">
+            <legend>
+                Quali tipi di misure o cambiamenti sono stati adottati?
+            </legend>
+            {{ form.d10_1 }}
+            <div id="d10_2_hidden">
+                <br/>
+                <div class="grid-x grid-padding-x">
+                    <div class="cell medium-2">
+                        <label class="text-right middle">Specificare: </label>
+                    </div>
+                    <div class="cell medium-8">
+                        {{ form.d10_2 }}
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+
+
+        <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione agisce per rimuovere forme di ritorsione adottate nei confronti del whistleblower?
+        </legend>
+        {{ form.d11 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione fornisce informazioni sul seguito dato alle segnalazioni ai dipendenti?
+        </legend>
+        {{ form.d12 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione prevede abitualmente iniziative di formazione per…?
+        </legend>
+        {{ form.d13 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            La formazione prevista si concentra specificatamente sulla legislazione sul whistleblowing e sui canali di segnalazione?
+        </legend>
+        {{ form.d14 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            È prevista formazione specifica sulla legislazione sul whistleblowing e sui canali di segnalazione ai nuovi assunti?
+        </legend>
+        {{ form.d15 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione ha mai adottato misure interne o azioni su base volontaria per ….?
+        </legend>
+        {{ form.d16 }}
+        <div id="d16_hidden">
+            <br/>
+            <div class="grid-x grid-padding-x">
+                <div class="cell medium-2">
+                    <label class="text-right middle">Specificare</label>
+                </div>
+                <div class="cell medium-8">
+                    {{ form.d16_1 }}
+                </div>
+                <div class="cell medium-2"></div>
+            </div>
+        </div>
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Esiste una formale valutazione sui risultati dei whistleblower a livello nazionale
+        </legend>
+        {{ form.d17 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            L’amministrazione ha mai intrapreso valutazioni interne o auto-valutazioni sull’implementazione dei sistemi in vigore sui whistleblowing?
+        </legend>
+        {{ form.d18 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <div id="d18_hidden">
+
+        <fieldset class="fieldset">
+            <legend>
+                Le valutazioni interne sono… ?
+            </legend>
+            {{ form.d18_1 }}
+        </fieldset>
+
+        <br/><br/>
+
+    </div>
+
+    <fieldset class="fieldset">
+        <legend>
+            Come valuterebbe il complessivo grado di efficacia della gestione delle segnalazioni all’interno dell’amministrazione?
+        </legend>
+        {{ form.d19 }}
+    </fieldset>
+
+    <br/><br/>
+
+    <fieldset class="fieldset">
+        <legend>
+            Suggerimenti
+        </legend>
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-2"></div>
+            <div class="cell medium-8">
+                {{ form.d20 }}
+            </div>
+            <div class="cell medium-2"></div>
+        </div>
+    </fieldset>
+
+    <br/><br/>
+
+</form>
+
+
+
+{% endblock %}
