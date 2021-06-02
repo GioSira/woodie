@@ -102,7 +102,7 @@ thinc==7.4.0
 tornado==6.0.3
 tqdm==4.39.0
 treetaggerwrapper==2.3
-urllib3==1.25.7
+urllib3==1.26.5
 w3lib==1.21.0
 wasabi==0.6.0
 webassets==2.0
