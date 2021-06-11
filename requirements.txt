@@ -106,7 +106,7 @@ urllib3==1.25.7
 w3lib==1.21.0
 wasabi==0.6.0
 webassets==2.0
-websockets==8.1
+websockets==9.1
 Werkzeug==0.16.1
 wn==0.0.23
 wrapt==1.12.1
