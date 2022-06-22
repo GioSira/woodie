@@ -56,7 +56,7 @@ murmurhash==1.0.2
 network==0.1
 networkx==2.4
 nltk==3.4.5
-numpy==1.17.4
+numpy==1.22.0
 openpyxl==3.0.2
 opt-einsum==3.2.0
 packaging==19.2
